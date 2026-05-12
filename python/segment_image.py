@@ -3,12 +3,12 @@ import argparse
 import numpy as np
 from skimage.filters import gaussian, threshold_li
 from skimage.measure import label
-from skimage.segmentation import watershed
+from skimage.segmentation import watershed, clear_border
 from skimage.morphology import remove_small_objects
 from skimage.feature import peak_local_max
 from scipy import ndimage as ndi
-import matplotlib.pyplot as plt
 from pathlib import Path
+
 
 def segment_image(input_path: Path, output_path: Path) -> None:
     image = iio3.imread(input_path)
@@ -16,20 +16,29 @@ def segment_image(input_path: Path, output_path: Path) -> None:
     # gaussian blur
     blurred_image = gaussian(image, sigma=3)
 
-    # threshold 
+    # threshold, and remove any small objects
     threshold = threshold_li(blurred_image)
     thresholded_image = blurred_image > threshold
+    thresholded_image = remove_small_objects(thresholded_image, max_size=100)
 
-    # watershed to split items?
+    # watershed to split touching nuclei
     distance = ndi.distance_transform_edt(thresholded_image)
-    nuclei = watershed(-distance, mask=thresholded_image)
+    blurred_distance = gaussian(distance, sigma=6)
+    coords = peak_local_max(
+        blurred_distance,
+        min_distance=7,
+        footprint=np.ones((3, 3)),
+        labels=thresholded_image
+    )
+    mask = np.zeros(distance.shape, dtype=bool)
+    mask[tuple(coords.T)] = True
+    markers = label(mask)
+    nuclei = watershed(-distance, markers, mask=thresholded_image)
 
-    # connected components
-    nuclei = label(thresholded_image)
+    # remove items touching the image border
+    nuclei = clear_border(nuclei)
 
-    # filter small items
-    nuclei = remove_small_objects(nuclei, max_size=100)
-
+    # save segmented image to new file
     output_path.parent.mkdir(parents=True, exist_ok=True)
     iio3.imwrite(output_path, nuclei)
 
@@ -41,6 +50,7 @@ def main():
     args = parser.parse_args()
 
     segment_image(Path(args.input_path), Path(args.output_path))
+
 
 if __name__ == "__main__":
     main()
