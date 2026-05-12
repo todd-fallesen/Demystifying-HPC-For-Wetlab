@@ -11,6 +11,16 @@ from pathlib import Path
 
 
 def segment_image(input_path: Path, output_path: Path) -> None:
+    """Segment the nuclei in a single image.
+
+    Parameters
+    ----------
+    input_path : Path
+        Path of input image
+    output_path : Path
+        Path to write segmented output to
+    """
+
     image = iio3.imread(input_path)
 
     # gaussian blur
@@ -44,7 +54,16 @@ def segment_image(input_path: Path, output_path: Path) -> None:
 
 
 def main():
-    parser = argparse.ArgumentParser()
+    """
+    Read input / output paths from command-line arguments, then trigger
+    segmentation.
+
+    Help text for this script can be printed with 'python segment_image.py --help'
+    """
+
+    parser = argparse.ArgumentParser(
+        description="Segment the nuclei in a single image, and write to an output file"
+    )
     parser.add_argument("input_path", help="path of the input image")
     parser.add_argument("output_path", help="path of the output image")
     args = parser.parse_args()
