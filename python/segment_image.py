@@ -19,7 +19,7 @@ def segment_image(input_path: Path, output_path: Path) -> None:
     # threshold, and remove any small objects
     threshold = threshold_li(blurred_image)
     thresholded_image = blurred_image > threshold
-    thresholded_image = remove_small_objects(thresholded_image, max_size=100)
+    thresholded_image = remove_small_objects(thresholded_image, max_size=2000)
 
     # watershed to split touching nuclei
     distance = ndi.distance_transform_edt(thresholded_image)
