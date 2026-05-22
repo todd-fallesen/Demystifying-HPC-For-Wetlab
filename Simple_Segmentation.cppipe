@@ -2,7 +2,7 @@ CellProfiler Pipeline: http://www.cellprofiler.org
 Version:5
 DateRevision:428
 GitHash:
-ModuleCount:7
+ModuleCount:9
 HasImagePlaneDetails:False
 
 Images:[module_num:1|svn_version:'Unknown'|variable_revision_number:2|show_window:False|notes:['To begin creating your project, use the Images module to compile a list of files and/or folders that you want to analyze. You can also specify a set of rules to include only the desired files in your selected folders.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
@@ -90,13 +90,13 @@ IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_num
     Use advanced settings?:Yes
     Threshold setting version:12
     Threshold strategy:Global
-    Thresholding method:Minimum Cross-Entropy
+    Thresholding method:Otsu
     Threshold smoothing scale:1.3488
     Threshold correction factor:1.0
     Lower and upper bounds on threshold:0.0,1.0
     Manual threshold:0.0
     Select the measurement to threshold with:None
-    Two-class or three-class thresholding?:Three classes
+    Two-class or three-class thresholding?:Two classes
     Log transform before thresholding?:No
     Assign pixels in the middle intensity class to the foreground or the background?:Background
     Size of adaptive window:50
@@ -112,11 +112,37 @@ MeasureObjectSizeShape:[module_num:6|svn_version:'Unknown'|variable_revision_num
     Calculate the Zernike features?:Yes
     Calculate the advanced features?:No
 
-ExportToSpreadsheet:[module_num:7|svn_version:'Unknown'|variable_revision_number:13|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+OverlayObjects:[module_num:7|svn_version:'Unknown'|variable_revision_number:1|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Input:DAPI_Image
+    Name the output image:OverlayObjects
+    Objects:DAPI_Nuclei_Objects
+    Opacity:0.05
+
+SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:16|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the type of image to save:Image
+    Select the image to save:OverlayObjects
+    Select method for constructing file names:From image filename
+    Select image name for file prefix:DAPI_Image
+    Enter single file name:OrigBlue
+    Number of digits:4
+    Append a suffix to the image file name?:No
+    Text to append to the image name:
+    Saved file format:tiff
+    Output file location:Default Output Folder|
+    Image bit depth:8-bit integer
+    Overwrite existing files without warning?:No
+    When to save:Every cycle
+    Record the file and path information to the saved image?:No
+    Create subfolders in the output folder?:No
+    Base image folder:Elsewhere...|
+    How to save the series:T (Time)
+    Save with lossless compression?:Yes
+
+ExportToSpreadsheet:[module_num:9|svn_version:'Unknown'|variable_revision_number:13|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the column delimiter:Comma (",")
-    Add image metadata columns to your object data file?:No
-    Add image file and folder names to your object data file?:No
-    Select the measurements to export:Yes
+    Add image metadata columns to your object data file?:Yes
+    Add image file and folder names to your object data file?:Yes
+    Select the measurements to export:No
     Calculate the per-image mean values for object measurements?:No
     Calculate the per-image median values for object measurements?:No
     Calculate the per-image standard deviation values for object measurements?:No
@@ -126,11 +152,11 @@ ExportToSpreadsheet:[module_num:7|svn_version:'Unknown'|variable_revision_number
     Select the image to use as the identifier:None
     Select the metadata to use as the identifier:None
     Export all measurement types?:Yes
-    Press button to select measurements:DAPI_Nuclei_Objects|AreaShape_Eccentricity,DAPI_Nuclei_Objects|AreaShape_Zernike_4_2,DAPI_Nuclei_Objects|AreaShape_Zernike_4_0,DAPI_Nuclei_Objects|AreaShape_Zernike_4_4,DAPI_Nuclei_Objects|AreaShape_Zernike_9_3,DAPI_Nuclei_Objects|AreaShape_Zernike_9_9,DAPI_Nuclei_Objects|AreaShape_Zernike_9_7,DAPI_Nuclei_Objects|AreaShape_Zernike_9_5,DAPI_Nuclei_Objects|AreaShape_Zernike_9_1,DAPI_Nuclei_Objects|AreaShape_Zernike_5_1,DAPI_Nuclei_Objects|AreaShape_Zernike_5_3,DAPI_Nuclei_Objects|AreaShape_Zernike_5_5,DAPI_Nuclei_Objects|AreaShape_Zernike_3_3,DAPI_Nuclei_Objects|AreaShape_Zernike_3_1,DAPI_Nuclei_Objects|AreaShape_Zernike_6_2,DAPI_Nuclei_Objects|AreaShape_Zernike_6_0,DAPI_Nuclei_Objects|AreaShape_Zernike_6_6,DAPI_Nuclei_Objects|AreaShape_Zernike_6_4,DAPI_Nuclei_Objects|AreaShape_Zernike_2_0,DAPI_Nuclei_Objects|AreaShape_Zernike_2_2,DAPI_Nuclei_Objects|AreaShape_Zernike_8_4,DAPI_Nuclei_Objects|AreaShape_Zernike_8_8,DAPI_Nuclei_Objects|AreaShape_Zernike_8_6,DAPI_Nuclei_Objects|AreaShape_Zernike_8_0,DAPI_Nuclei_Objects|AreaShape_Zernike_8_2,DAPI_Nuclei_Objects|AreaShape_Zernike_7_7,DAPI_Nuclei_Objects|AreaShape_Zernike_7_3,DAPI_Nuclei_Objects|AreaShape_Zernike_7_5,DAPI_Nuclei_Objects|AreaShape_Zernike_7_1,DAPI_Nuclei_Objects|AreaShape_Zernike_0_0,DAPI_Nuclei_Objects|AreaShape_Zernike_1_1,DAPI_Nuclei_Objects|AreaShape_BoundingBoxMaximum_Y,DAPI_Nuclei_Objects|AreaShape_BoundingBoxMaximum_X,DAPI_Nuclei_Objects|AreaShape_MeanRadius,DAPI_Nuclei_Objects|AreaShape_Extent,DAPI_Nuclei_Objects|AreaShape_EulerNumber,DAPI_Nuclei_Objects|AreaShape_MinFeretDiameter,DAPI_Nuclei_Objects|AreaShape_MaxFeretDiameter,DAPI_Nuclei_Objects|AreaShape_Perimeter,DAPI_Nuclei_Objects|AreaShape_BoundingBoxArea,DAPI_Nuclei_Objects|AreaShape_ConvexArea,DAPI_Nuclei_Objects|AreaShape_MinorAxisLength,DAPI_Nuclei_Objects|AreaShape_BoundingBoxMinimum_Y,DAPI_Nuclei_Objects|AreaShape_BoundingBoxMinimum_X,DAPI_Nuclei_Objects|AreaShape_FormFactor,DAPI_Nuclei_Objects|AreaShape_Orientation,DAPI_Nuclei_Objects|AreaShape_Center_X,DAPI_Nuclei_Objects|AreaShape_Center_Y,DAPI_Nuclei_Objects|AreaShape_Compactness,DAPI_Nuclei_Objects|AreaShape_Area,DAPI_Nuclei_Objects|AreaShape_Solidity,DAPI_Nuclei_Objects|AreaShape_EquivalentDiameter,DAPI_Nuclei_Objects|AreaShape_MajorAxisLength,DAPI_Nuclei_Objects|AreaShape_MaximumRadius,DAPI_Nuclei_Objects|AreaShape_MedianRadius,DAPI_Nuclei_Objects|Location_Center_Z,DAPI_Nuclei_Objects|Location_Center_Y,DAPI_Nuclei_Objects|Location_Center_X,DAPI_Nuclei_Objects|Number_Object_Number,Image|Frame_Neutrite_MAP2_Image,Image|Frame_PreSynaptic_Synaptophysin_Image,Image|Frame_DAPI_Image,Image|Frame_PostSynaptic_PSD95_Image,Image|URL_DAPI_Image,Image|URL_PreSynaptic_Synaptophysin_Image,Image|URL_PostSynaptic_PSD95_Image,Image|URL_Neutrite_MAP2_Image,Image|Series_PostSynaptic_PSD95_Image,Image|Series_PreSynaptic_Synaptophysin_Image,Image|Series_DAPI_Image,Image|Series_Neutrite_MAP2_Image,Image|Threshold_WeightedVariance_DAPI_Nuclei_Objects,Image|Threshold_FinalThreshold_DAPI_Nuclei_Objects,Image|Threshold_SumOfEntropies_DAPI_Nuclei_Objects,Image|Threshold_OrigThreshold_DAPI_Nuclei_Objects,Image|ExecutionTime_05IdentifyPrimaryObjects,Image|ExecutionTime_01Images,Image|ExecutionTime_04Groups,Image|ExecutionTime_02Metadata,Image|ExecutionTime_03NamesAndTypes,Image|ExecutionTime_06MeasureObjectSizeShape,Image|FileName_PreSynaptic_Synaptophysin_Image,Image|FileName_DAPI_Image,Image|FileName_Neutrite_MAP2_Image,Image|FileName_PostSynaptic_PSD95_Image,Image|ModuleError_03NamesAndTypes,Image|ModuleError_06MeasureObjectSizeShape,Image|ModuleError_05IdentifyPrimaryObjects,Image|ModuleError_01Images,Image|ModuleError_04Groups,Image|ModuleError_02Metadata,Image|Count_DAPI_Nuclei_Objects,Image|Group_Length,Image|Group_Index,Image|Group_Number,Image|PathName_PreSynaptic_Synaptophysin_Image,Image|PathName_PostSynaptic_PSD95_Image,Image|PathName_Neutrite_MAP2_Image,Image|PathName_DAPI_Image,Image|MD5Digest_DAPI_Image,Image|MD5Digest_PreSynaptic_Synaptophysin_Image,Image|MD5Digest_Neutrite_MAP2_Image,Image|MD5Digest_PostSynaptic_PSD95_Image,Image|Height_Neutrite_MAP2_Image,Image|Height_PreSynaptic_Synaptophysin_Image,Image|Height_PostSynaptic_PSD95_Image,Image|Height_DAPI_Image,Image|Scaling_PreSynaptic_Synaptophysin_Image,Image|Scaling_PostSynaptic_PSD95_Image,Image|Scaling_Neutrite_MAP2_Image,Image|Scaling_DAPI_Image,Image|Width_Neutrite_MAP2_Image,Image|Width_DAPI_Image,Image|Width_PreSynaptic_Synaptophysin_Image,Image|Width_PostSynaptic_PSD95_Image,Experiment|CellProfiler_Version,Experiment|Modification_Timestamp,Experiment|Pipeline_Pipeline,Experiment|Run_Timestamp
+    Press button to select measurements:DAPI_Nuclei_Objects|AreaShape_EquivalentDiameter,DAPI_Nuclei_Objects|AreaShape_ConvexArea,DAPI_Nuclei_Objects|AreaShape_Zernike_8_8,DAPI_Nuclei_Objects|AreaShape_Zernike_8_6,DAPI_Nuclei_Objects|AreaShape_Zernike_8_2,DAPI_Nuclei_Objects|AreaShape_Zernike_8_4,DAPI_Nuclei_Objects|AreaShape_Zernike_8_0,DAPI_Nuclei_Objects|AreaShape_Zernike_2_0,DAPI_Nuclei_Objects|AreaShape_Zernike_2_2,DAPI_Nuclei_Objects|AreaShape_Zernike_9_3,DAPI_Nuclei_Objects|AreaShape_Zernike_9_9,DAPI_Nuclei_Objects|AreaShape_Zernike_9_7,DAPI_Nuclei_Objects|AreaShape_Zernike_9_5,DAPI_Nuclei_Objects|AreaShape_Zernike_9_1,DAPI_Nuclei_Objects|AreaShape_Zernike_5_1,DAPI_Nuclei_Objects|AreaShape_Zernike_5_5,DAPI_Nuclei_Objects|AreaShape_Zernike_5_3,DAPI_Nuclei_Objects|AreaShape_Zernike_7_1,DAPI_Nuclei_Objects|AreaShape_Zernike_7_5,DAPI_Nuclei_Objects|AreaShape_Zernike_7_3,DAPI_Nuclei_Objects|AreaShape_Zernike_7_7,DAPI_Nuclei_Objects|AreaShape_Zernike_0_0,DAPI_Nuclei_Objects|AreaShape_Zernike_6_2,DAPI_Nuclei_Objects|AreaShape_Zernike_6_6,DAPI_Nuclei_Objects|AreaShape_Zernike_6_0,DAPI_Nuclei_Objects|AreaShape_Zernike_6_4,DAPI_Nuclei_Objects|AreaShape_Zernike_3_1,DAPI_Nuclei_Objects|AreaShape_Zernike_3_3,DAPI_Nuclei_Objects|AreaShape_Zernike_4_2,DAPI_Nuclei_Objects|AreaShape_Zernike_4_4,DAPI_Nuclei_Objects|AreaShape_Zernike_4_0,DAPI_Nuclei_Objects|AreaShape_Zernike_1_1,DAPI_Nuclei_Objects|AreaShape_Orientation,DAPI_Nuclei_Objects|AreaShape_MedianRadius,DAPI_Nuclei_Objects|AreaShape_MeanRadius,DAPI_Nuclei_Objects|AreaShape_Center_Y,DAPI_Nuclei_Objects|AreaShape_Center_X,DAPI_Nuclei_Objects|AreaShape_BoundingBoxMaximum_Y,DAPI_Nuclei_Objects|AreaShape_BoundingBoxMaximum_X,DAPI_Nuclei_Objects|AreaShape_MajorAxisLength,DAPI_Nuclei_Objects|AreaShape_Eccentricity,DAPI_Nuclei_Objects|AreaShape_MaxFeretDiameter,DAPI_Nuclei_Objects|AreaShape_MinFeretDiameter,DAPI_Nuclei_Objects|AreaShape_Area,DAPI_Nuclei_Objects|AreaShape_Compactness,DAPI_Nuclei_Objects|AreaShape_EulerNumber,DAPI_Nuclei_Objects|AreaShape_FormFactor,DAPI_Nuclei_Objects|AreaShape_BoundingBoxMinimum_Y,DAPI_Nuclei_Objects|AreaShape_BoundingBoxMinimum_X,DAPI_Nuclei_Objects|AreaShape_MinorAxisLength,DAPI_Nuclei_Objects|AreaShape_BoundingBoxArea,DAPI_Nuclei_Objects|AreaShape_Perimeter,DAPI_Nuclei_Objects|AreaShape_MaximumRadius,DAPI_Nuclei_Objects|AreaShape_Extent,DAPI_Nuclei_Objects|AreaShape_Solidity,DAPI_Nuclei_Objects|Location_Center_Y,DAPI_Nuclei_Objects|Location_Center_X,DAPI_Nuclei_Objects|Location_Center_Z,DAPI_Nuclei_Objects|Number_Object_Number,Image|ModuleError_02Metadata,Image|ModuleError_05IdentifyPrimaryObjects,Image|ModuleError_04Groups,Image|ModuleError_01Images,Image|ModuleError_06MeasureObjectSizeShape,Image|ModuleError_03NamesAndTypes,Image|PathName_PreSynaptic_Synaptophysin_Image,Image|PathName_DAPI_Image,Image|PathName_Neutrite_MAP2_Image,Image|PathName_PostSynaptic_PSD95_Image,Image|URL_Neutrite_MAP2_Image,Image|URL_PreSynaptic_Synaptophysin_Image,Image|URL_DAPI_Image,Image|URL_PostSynaptic_PSD95_Image,Image|Frame_Neutrite_MAP2_Image,Image|Frame_PostSynaptic_PSD95_Image,Image|Frame_PreSynaptic_Synaptophysin_Image,Image|Frame_DAPI_Image,Image|Series_PostSynaptic_PSD95_Image,Image|Series_DAPI_Image,Image|Series_Neutrite_MAP2_Image,Image|Series_PreSynaptic_Synaptophysin_Image,Image|Threshold_SumOfEntropies_DAPI_Nuclei_Objects,Image|Threshold_WeightedVariance_DAPI_Nuclei_Objects,Image|Threshold_FinalThreshold_DAPI_Nuclei_Objects,Image|Threshold_OrigThreshold_DAPI_Nuclei_Objects,Image|Scaling_PreSynaptic_Synaptophysin_Image,Image|Scaling_Neutrite_MAP2_Image,Image|Scaling_DAPI_Image,Image|Scaling_PostSynaptic_PSD95_Image,Image|Count_DAPI_Nuclei_Objects,Image|Height_PreSynaptic_Synaptophysin_Image,Image|Height_DAPI_Image,Image|Height_Neutrite_MAP2_Image,Image|Height_PostSynaptic_PSD95_Image,Image|MD5Digest_Neutrite_MAP2_Image,Image|MD5Digest_PreSynaptic_Synaptophysin_Image,Image|MD5Digest_PostSynaptic_PSD95_Image,Image|MD5Digest_DAPI_Image,Image|Width_Neutrite_MAP2_Image,Image|Width_DAPI_Image,Image|Width_PostSynaptic_PSD95_Image,Image|Width_PreSynaptic_Synaptophysin_Image,Image|ExecutionTime_04Groups,Image|ExecutionTime_02Metadata,Image|ExecutionTime_06MeasureObjectSizeShape,Image|ExecutionTime_05IdentifyPrimaryObjects,Image|ExecutionTime_01Images,Image|ExecutionTime_03NamesAndTypes,Image|FileName_PostSynaptic_PSD95_Image,Image|FileName_Neutrite_MAP2_Image,Image|FileName_DAPI_Image,Image|FileName_PreSynaptic_Synaptophysin_Image,Image|Group_Number,Image|Group_Index,Image|Group_Length,Experiment|CellProfiler_Version,Experiment|Pipeline_Pipeline,Experiment|Modification_Timestamp,Experiment|Run_Timestamp
     Representation of Nan/Inf:NaN
     Add a prefix to file names?:Yes
     Filename prefix:MyExpt_
-    Overwrite existing files without warning?:No
+    Overwrite existing files without warning?:Yes
     Data to export:Do not use
     Combine these object measurements with those of the previous object?:No
     File name:DATA.csv

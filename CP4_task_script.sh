@@ -18,7 +18,7 @@ source ~/.bashrc
 ml Anaconda3
 ml GCC
 ml Java
-conda activate cp4
+conda activate cp426_nemo_v1
 
 echo $1
 outdir=$(basename $1)
