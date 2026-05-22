@@ -6,8 +6,8 @@ pip cache purge
 
 
 # URL of the YAML file on GitHub
-yaml_url="https://github.com/FrancisCrickInstitute/Image-Analysis-Group/blob/master/software_instructions/CellProfiler/cp_426.yml"
-#file_name="cp_426.yml"
+yaml_url="https://raw.githubusercontent.com/todd-fallesen/Demystifying-HPC-For-Wetlab/main/cellprofiler/cp_428.yml"
+#file_name="cp_428.yml"
 
 # Folder to download the YAML file
 download_folder="./tmp"
@@ -21,7 +21,7 @@ else
 fi
 
 # Download the YAML file
-wget -O "$download_folder/cp_426.yml" "$yaml_url"
+wget -O "$download_folder/cp_428.yml" "$yaml_url"
 
 # Check if the download was successful
 if [ $? -eq 0 ]; then
@@ -33,7 +33,7 @@ fi
 
 # Check to see if the environment already exists
 # Specify the path to your YAML file
-yaml_file="$download_folder/cp_426.yml"
+yaml_file="$download_folder/cp_428.yml"
 
 # Check if the file exists
 if [ ! -f "$yaml_file" ]; then
@@ -77,7 +77,7 @@ echo "Loaded modules"
 cd $download_folder
 echo "$PWD"
 
-mamba env create --file cp_426.yml
+mamba env create --file cp_428.yml
 
 # Check if the Conda environment exists
 if conda env list | grep -q "$environment_name"; then
@@ -90,6 +90,6 @@ fi
 echo "Created Environment"
 
 # Clean up: remove the downloaded YAML file
-rm "$download_folder/cp_426.yml"
+rm "$download_folder/cp_428.yml"
 
 echo "Script completed"
