@@ -14,15 +14,13 @@
 
 
 
-source ~/.bashrc
+source $HOME/.bashrc
 ml Anaconda3
-ml GCC
-ml Java
-conda activate cp4
+conda activate scikit-image-env
 
 echo $1
 outdir=$(basename $1)
-python "~/HPC_Paper/python/segment_image.py" -i "${1}/" -o "/nemo/stp/lm/working/fallest/Projects/HPC_Paper/python/seg_output/${outdir}_output"
+python "$HOME/HPC_Paper/python/segment_image.py" "${1}/" "${outdir}_output.tiff"
 
 
 
