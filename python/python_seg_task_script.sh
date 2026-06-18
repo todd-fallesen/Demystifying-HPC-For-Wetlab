@@ -7,10 +7,8 @@
 #SBATCH --partition=ncpu
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --mail-user=todd.fallesen@crick.ac.uk
-#SBATCH --output=/camp/home/fallest/working/fallest/CPOut/slurm-test.out
-#SBATCH --output=logs/slurm.%x.%N.%j.out
-#SBATCH --error=logs/slurm.%x.%N.%j.err
+#SBATCH --output=logs/slurm.%x.%j.out
+#SBATCH --error=logs/slurm.%x.%j.err
 
 
 
