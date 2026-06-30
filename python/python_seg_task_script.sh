@@ -7,22 +7,17 @@
 #SBATCH --partition=ncpu
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --mail-user=todd.fallesen@crick.ac.uk
-#SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --output=/camp/home/fallest/working/fallest/CPOut/slurm-test.out
-#SBATCH --error=/camp/home/fallest/working/fallest/CPOut/slurm-test.err
+#SBATCH --output=logs/slurm.%x.%j.out
+#SBATCH --error=logs/slurm.%x.%j.err
 
 
 
-source ~/.bashrc
 ml Anaconda3
-ml GCC
-ml Java
-conda activate cp4
+conda activate scikit-image-env
 
 echo $1
-outdir=$(basename $1)
-python "~/HPC_Paper/python/segment_image.py" -i "${1}/" -o "/nemo/stp/lm/working/fallest/Projects/HPC_Paper/python/seg_output/${outdir}_output"
+filename=$(basename $1 .tiff)
+python "$HOME/HPC_Paper/python/segment_image.py" "${1}/" "${filename}_output.tiff"
 
 
 

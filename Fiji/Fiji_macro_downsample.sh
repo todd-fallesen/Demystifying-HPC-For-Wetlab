@@ -11,6 +11,6 @@
 #SBATCH --gres=gpu:1 
  
 cd /nemo/stp/lm/working/marcots/Fiji.app
-./ImageJ-linux64 --headless --console -macro ../IDR0051/reduce_dimensions_macro_no_arg_test.ijm 
+./ImageJ-linux64 --headless --console -macro ../IDR0051/reduce_dimensions_macro.ijm 
 
 
