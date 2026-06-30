@@ -10,6 +10,7 @@
  */
 
 // IO initialisation
+// Put the input and output directories here
 input_directory = "/camp/home/marcots/working/marcots/S-BIAD7/data/";
 output_directory = "/camp/home/marcots/working/marcots/S-BIAD7/output/";
 
