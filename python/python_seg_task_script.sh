@@ -1,4 +1,6 @@
 #!/bin/bash
+#This is a basic shell script to submit a python script to HPC to run on an image. 
+#This is run internally by job_submission_script.sh
 
 #SBATCH --job-name=mmt
 #SBATCH --cpus-per-task=1
@@ -20,4 +22,11 @@ filename=$(basename $1 .tiff)
 python "$HOME/HPC_Paper/python/segment_image.py" "${1}/" "${filename}_output.tiff"
 
 
-
+# Demystifying HPC: Empowering Life Scientists in HPC use for BioImage Analysis
+#
+# Authors:
+# Camille Charoy, Ruaridh Gollifer, Camilla Harris, Courtney Hopf,
+# Stefania Marcotti, Kimberly Meechan, John Roche, Todd Fallesen
+#
+# Repository:
+# https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab

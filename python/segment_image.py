@@ -1,3 +1,14 @@
+"""
+Demystifying HPC: Empowering Life Scientists in HPC use for BioImage Analysis
+
+Authors:
+Camille Charoy, Ruaridh Gollifer, Camilla Harris, Courtney Hopf,
+Stefania Marcotti, Kimberly Meechan, John Roche, Todd Fallesen
+
+Repository:
+https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab
+"""
+
 import imageio.v3 as iio3
 import argparse
 import numpy as np
