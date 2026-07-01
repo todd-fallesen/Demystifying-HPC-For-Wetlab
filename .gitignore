@@ -1,4 +1,8 @@
 .vscode/
 /data
 __pycache__/
+<<<<<<< Updated upstream
 /S-BIAD7
+=======
+*.tiff
+>>>>>>> Stashed changes
