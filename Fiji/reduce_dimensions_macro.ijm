@@ -11,19 +11,6 @@
 * https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab
 */
 
-
-
-
-/*
- * Demystify HPC
- * 
- * Author: Stefania Marcotti (stefania.marcotti@crick.ac.uk)
- * 
- * Downsample dataset in Z and time
- * 
- * CC-BY-SA-4.0 license: creativecommons.org/licenses/by-sa/4.0/
- * 
- */
  
 //Downsample parameters
 time_downsample = 2; 
