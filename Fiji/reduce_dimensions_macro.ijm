@@ -9,29 +9,43 @@
  * 
  */
  
-// PARAMETERS //
-channels = 1;
-slices = 451;
-frames = 131;
-
+//Downsample parameters
 time_downsample = 2; 
 Z_downsample = 10;
+xscale = 0.25;  //downsample by half (will give you a quarter the size image)
+yscale = 0.25;
 
 // IO initialisation
-input_directory = "/camp/home/marcots/working/marcots/IDR0051/Processed Image Files/";
-output_directory = "/camp/home/marcots/working/marcots/IDR0051/";
+// Get the argument string passed from the command line
+arg = getArgument();
+
+// Extract variables from the argument string
+args = split(arg, ",");
+
+input_image = args[0];
+output_directory = args[1];
+
+
+print("Input image is: ", input_image);
+print("Output directory is: ", output_directory);
 
 setBatchMode(true);
 
-// import as image sequence
-File.openSequence(input_directory);
+// open image
+open(input_image);
 title = getTitle();
+Stack.getDimensions(width, height, channels, slices, frames);
+print("There are : ", channels, " channels, ", slices, " : slices and ", frames, " : frames");
 
-// rearrange stack
-run("Stack to Hyperstack...", "order=xyczt(default) channels="+channels+" slices="+slices+" frames="+frames+" display=Color");
-
-// downsample in space and time
+// downsample in space and time and x/y
 run("Make Subset...", "slices=1-"+slices+"-"+Z_downsample+" frames=1-"+frames+"-"+time_downsample);
+
+getDimensions(width,height,channels,slices,frames);
+newWidth  = floor(width*xscale);
+newHeight = floor(height*yscale);
+
+run("Size...", "width="+newWidth+" height="+newHeight+" depth="+slices+" average interpolation=Bilinear");
+
 
 // save
 saveAs("Tiff", output_directory+title+"_downsampled.tif");
@@ -40,3 +54,6 @@ saveAs("Tiff", output_directory+title+"_downsampled.tif");
 run("Close All");
 
 setBatchMode(false);
+
+print("All done!")
+eval("script", "System.exit(0);");  //close the fiji instance when we're done, so we're not wasting resources. 
