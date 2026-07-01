@@ -1,13 +1,16 @@
 /*
- * Demystify HPC
- * 
- * Author: Stefania Marcotti (stefania.marcotti@crick.ac.uk)
- * 
- * Create binary mask from a specified channel in a series of input images
- * 
- * CC-BY-SA-4.0 license: creativecommons.org/licenses/by-sa/4.0/
- * 
- */
+* Demystifying HPC: Empowering Life Scientists in HPC use for BioImage Analysis
+*
+* Authors:
+* Camille Charoy, Ruaridh Gollifer, Camilla Harris, Courtney Hopf,
+* Stefania Marcotti, Kimberly Meechan, John Roche, Todd 
+*
+* Create binary mask from a specified channel in a series of input images
+*
+* Repository:
+* https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab
+*/
+
 
 // IO initialisation
 // Put the input and output directories here

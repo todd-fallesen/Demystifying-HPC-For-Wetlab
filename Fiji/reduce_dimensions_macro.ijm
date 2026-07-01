@@ -1,4 +1,20 @@
 /*
+* Demystifying HPC: Empowering Life Scientists in HPC use for BioImage Analysis
+*
+* Authors:
+* Camille Charoy, Ruaridh Gollifer, Camilla Harris, Courtney Hopf,
+* Stefania Marcotti, Kimberly Meechan, John Roche, Todd 
+*
+* This script downsamples by Z, time, and x and y
+*
+* Repository:
+* https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab
+*/
+
+
+
+
+/*
  * Demystify HPC
  * 
  * Author: Stefania Marcotti (stefania.marcotti@crick.ac.uk)

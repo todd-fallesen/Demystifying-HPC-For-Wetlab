@@ -1,5 +1,6 @@
 #!/bin/bash
-# Run Fiji macro headless (downsample in Z and time)
+# Run Fiji macro headless (downsample in Z, time, x and y.)
+# The variables to change how much you downsample are in "reduce_dimensions_macro.ijm"
 #SBATCH --job-name=macro-downsample
 #SBATCH --ntasks=1
 #SBATCH --time=04:00:00
@@ -21,3 +22,11 @@ OUTPUT_DIR="/camp/home/fallest/Desktop/working/fallest/Projects/HPC_Paper/Test_o
     -macro "$MACRO_PATH" \
     "$INPUT_IMAGE,$OUTPUT_DIR"
 
+# Demystifying HPC: Empowering Life Scientists in HPC use for BioImage Analysis
+#
+# Authors:
+# Camille Charoy, Ruaridh Gollifer, Camilla Harris, Courtney Hopf,
+# Stefania Marcotti, Kimberly Meechan, John Roche, Todd Fallesen
+#
+# Repository:
+# https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab
