@@ -1,5 +1,18 @@
 #!/bin/bash
 
+##########
+# Demystifying HPC: Empowering Life Scientists in HPC use for BioImage Analysis
+#
+# Authors:
+# Camille Charoy, Ruaridh Gollifer, Camilla Harris, Courtney Hopf,
+# Stefania Marcotti, Kimberly Meechan, John Roche, Todd Fallesen
+#
+# Repository:
+# https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab
+# 
+# This is a shell script for installing cellprofiler.  The yml file is hosted at the git repo for this paper. 
+
+
 #purge pip
 ml Anaconda3
 pip cache purge

@@ -27,3 +27,12 @@ cellprofiler -c -r -p /nemo/stp/lm/working/fallest/Projects/HPC_Paper/CellProfil
 
 
 
+# Demystifying HPC: Empowering Life Scientists in HPC use for BioImage Analysis
+#
+# Authors:
+# Camille Charoy, Ruaridh Gollifer, Camilla Harris, Courtney Hopf,
+# Stefania Marcotti, Kimberly Meechan, John Roche, Todd Fallesen
+#
+# Repository:
+# https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab
+# This shell script runs a cellprofiler pipeline on a single image set

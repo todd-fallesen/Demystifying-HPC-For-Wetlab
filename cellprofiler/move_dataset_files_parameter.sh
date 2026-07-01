@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+# Demystifying HPC: Empowering Life Scientists in HPC use for BioImage Analysis
+#
+# Authors:
+# Camille Charoy, Ruaridh Gollifer, Camilla Harris, Courtney Hopf,
+# Stefania Marcotti, Kimberly Meechan, John Roche, Todd Fallesen
+#
+# Repository:
+# https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab
+## This shell script works in the same method as move_dataset_files_hardcode, but allows uses to call the script with arguments for the input and output paths
+## To use, run bash move_dataset_files_parameter.sh path/to/images path/to/output
+
 SRC_DIR="$1"
 DEST_DIR="$2"
 
