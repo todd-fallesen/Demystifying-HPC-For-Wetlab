@@ -59,4 +59,3 @@ for f in "$SRC_DIR"/*.tiff; do                                       #This is a 
 
     fi
 done
-``
