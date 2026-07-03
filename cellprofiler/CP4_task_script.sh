@@ -18,11 +18,14 @@ source ~/.bashrc
 ml Anaconda3
 ml GCC
 ml Java
-conda activate cp426_nemo_v1
+conda activate cp428
 
 echo $1
 outdir=$(basename $1)
-cellprofiler -c -r -p /nemo/stp/lm/working/fallest/Projects/HPC_Paper/CellProfiler/Code/Simple_Segmentation.cppipe -i "${1}/" -o "/nemo/stp/lm/working/fallest/Projects/HPC_Paper/CellProfiler/CP_Output/${outdir}_output"
+PIPELINE_FILE="/nemo/stp/lm/working/fallest/Projects/HPC_Paper/Demystifying-HPC-For-Wetlab/cellprofiler/Simple_Segmentation.cppipe"
+OUTPUT_FOLDER="/nemo/stp/lm/working/fallest/Projects/HPC_Paper/CellProfiler/CP_Output/Multi_Set/"
+outdir=$(basename "$1")
+cellprofiler -c -r -p "$PIPELINE_FILE" -i "${1}/" -o "${OUTPUT_FOLDER}${outdir}_output"
 
 
 
