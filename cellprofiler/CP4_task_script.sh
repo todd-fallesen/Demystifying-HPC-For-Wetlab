@@ -25,7 +25,7 @@ outdir=$(basename $1)
 PIPELINE_FILE="/nemo/stp/lm/working/fallest/Projects/HPC_Paper/Demystifying-HPC-For-Wetlab/cellprofiler/Simple_Segmentation.cppipe"
 OUTPUT_FOLDER="/nemo/stp/lm/working/fallest/Projects/HPC_Paper/CellProfiler/CP_Output/Multi_Set/"
 outdir=$(basename "$1")
-cellprofiler -c -r -p "$PIPELINE_FILE" -i "${1}/" -o "${OUTPUT_FOLDER}${outdir}_output"
+cellprofiler -c -r -p "$PIPELINE_FILE" -i "${1}/" -o "${OUTPUT_FOLDER}${outdir}_output"  #This is the command that runs cellprofiler.  It takes the input folder (the dataset) and outputs to a new folder in the CP_Output directory.  The output folder is named after the input folder, with "_output" appended to it.
 
 
 
