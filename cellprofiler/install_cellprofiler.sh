@@ -91,6 +91,7 @@ cd $download_folder
 echo "$PWD"
 
 conda env create --file cp_428.yml
+#mamba env create --file cp_428.yml  #can use mamba if installed
 
 # Check if the Conda environment exists
 if conda env list | grep -q "$environment_name"; then
