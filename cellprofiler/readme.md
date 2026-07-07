@@ -52,8 +52,12 @@ conda activate cp_428
 ```
 
 ## Test data
+All data can be downloaded from : 
+The CellProfiler demo can be run in parts, each of which can be done independently.
+Test data for the `move_dataset_files_hardcode.sh` and `move_dataset_files_parameter.sh` are in `Demo_Image_Set\S-BIAD7\ExperimentA_Split_Channels`
+This same dataset can be used for the `CellProfiler_Single_Set.sh` and the `job_submission_script.sh`, but it is not recommended. 
 
-This script uses a single directory of test data containing 9 2D tiff images. Download from [TBD - Zenodo link]
+We recommend that you run either `move_dataset_files_hardcode.sh` or `move_dataset_files_parameter.sh` first which will create a new folder `ExperimentA_Split_Channels_Sorted`, which is better suited for CellProfiler.
 
 ## Parts that need to be adapted for your cluster
 
