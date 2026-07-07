@@ -15,6 +15,30 @@ In this example, we will use a shell script to submit a Cellprofiler job to segm
 | Simple_Segmentation.cppipe  | CellProfiler segmentation pipeline to segment the nuclei, save out an image file and a csv file of measurements |
 | Simple_Segmentation.cpproj  | CellProfiler project file, same as Simple_Segmentation.cppipe, but as an entire project file   |
 
+## Suggested Teaching Order for CellProfiler track
+The course is structured in such a way that the teaching examples can be taught using CellProfiler, Fiji Or Python. All of the tracks use shell scripting.
+In this track, the use of Fiji is also optional, but can be useful.  The Demo dataset in `ExperimentA` is in multi-channel z-stacks. 
+There is a Fiji script provided `split_channels_keep_1_slice.ijm` which can be used to split the data in `ExperimentA` into single channel, single slice images.
+To use the Fiji script, you must run `split_channels_fiji.sh`. 
+The results of `split_channels_keep_1_slice.ijm` are the same as in the Test Data `Demo_Image_Set\S-BIAD7\ExperimentA_Split_Channels`
+
+We then suggested you use `move_dataset_files_hardcode.sh` or `move_dataset_files_parameter.sh` to demonstrate moving files using shell scripting.
+Running this will also create nested folders for each `Rep` and `Div` image set, so that CellProfiler can be run over many image sets simultanously. 
+
+Finally, we suggest teaching `job_submission_script.sh` with `CP4_task_script.sh` to demonstrate running parallel CellProfiler jobs.
+If you wish to have a preceeding step, demonstrating calling CellProfiler from the command line, you can use `CellProfiler_Single_Set.sh`.
+
+
+
+## Test data
+All data can be downloaded from : 
+The CellProfiler demo can be run in parts, each of which can be done independently.
+Raw data is in `Demo_Image_Set\S-BIAD7\ExperimentA`
+Test data for the `move_dataset_files_hardcode.sh` and `move_dataset_files_parameter.sh` are in `Demo_Image_Set\S-BIAD7\ExperimentA_Split_Channels`
+This same dataset can be used for the `CellProfiler_Single_Set.sh` and the `job_submission_script.sh`, but it is not recommended. 
+
+We recommend that you run either `move_dataset_files_hardcode.sh` or `move_dataset_files_parameter.sh` first which will create a new folder `ExperimentA_Split_Channels_Sorted`, which is better suited for CellProfiler.
+
 ## Instructors note:
 All code here is provided as a template. It will have to be modified for use at your instutition while teaching. 
 For example, in the SBATCH parameters, partition names and email addresses should be modified. Other parameters may need to be modified to work with your system.
@@ -51,13 +75,6 @@ ml GCC
 conda activate cp_428
 ```
 
-## Test data
-All data can be downloaded from : 
-The CellProfiler demo can be run in parts, each of which can be done independently.
-Test data for the `move_dataset_files_hardcode.sh` and `move_dataset_files_parameter.sh` are in `Demo_Image_Set\S-BIAD7\ExperimentA_Split_Channels`
-This same dataset can be used for the `CellProfiler_Single_Set.sh` and the `job_submission_script.sh`, but it is not recommended. 
-
-We recommend that you run either `move_dataset_files_hardcode.sh` or `move_dataset_files_parameter.sh` first which will create a new folder `ExperimentA_Split_Channels_Sorted`, which is better suited for CellProfiler.
 
 ## Parts that need to be adapted for your cluster
 
@@ -66,7 +83,7 @@ In `job_submission_script.sh`:
 - Update the `BASE_DIR` path to match the location of the test data
 - Update the `TASK_SCRIPT` path to match the location of `python_seg_task_script.sh`
 
-In `python_seg_task_script.sh`:
+In `CP4_task_script.sh`:
 
 - Update the `#SBATCH --partition=ncpu` to match the name of the appropriate partition on your cluster
 - Update the `ml Anaconda3` line, to match the name of the module containing conda on your cluster
