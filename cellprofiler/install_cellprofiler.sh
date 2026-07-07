@@ -90,7 +90,7 @@ echo "Loaded modules"
 cd $download_folder
 echo "$PWD"
 
-mamba env create --file cp_428.yml
+conda env create --file cp_428.yml
 
 # Check if the Conda environment exists
 if conda env list | grep -q "$environment_name"; then
@@ -104,5 +104,6 @@ echo "Created Environment"
 
 # Clean up: remove the downloaded YAML file
 rm "$download_folder/cp_428.yml"
+
 
 echo "Script completed"

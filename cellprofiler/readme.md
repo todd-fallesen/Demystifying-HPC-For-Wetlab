@@ -28,12 +28,27 @@ Follow your institution's or insturctors instructions for setting this up.
 
 To install: download the *install_cellprofiler.sh* script into a folder into which you have read/write access.
 Make sure that you have conda installed on your system. 
-*Note* the script uses 'ml Anaconda3' to load conda. Your HPC system may use something different.
+*Note* the script uses `ml Anaconda3` to load conda. Your HPC system may use something different.
+Run the installation script as specified on your system.
+
+### Installing CellProfiler directly from yml
+Some instructors may choose to install directly from the yml file, if you wish to add that to your curriculum.
+To do so:
+'''
 
 ```
-conda create -n scikit-image-env python=3.12
-conda activate scikit-image-env
-pip install scikit-image
+ml Anaconda3
+ml Java
+ml GCC
+conda env create --file cp_428.yml
+```
+
+### Activating CellProfiler Environment
+```
+ml Anaconda3
+ml Java
+ml GCC
+conda activate cp_428
 ```
 
 ## Test data
