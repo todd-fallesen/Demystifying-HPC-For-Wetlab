@@ -1,7 +1,10 @@
-.vscode/
 /data
 __pycache__/
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+.DS_store
+>>>>>>> bbedce445b1464df6913902662bea054b555cb8e
 /S-BIAD7
 =======
 *.tiff

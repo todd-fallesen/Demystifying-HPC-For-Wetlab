@@ -15,12 +15,20 @@ In this example, we will use a shell script to submit a Cellprofiler job to segm
 | Simple_Segmentation.cppipe  | CellProfiler segmentation pipeline to segment the nuclei, save out an image file and a csv file of measurements |
 | Simple_Segmentation.cpproj  | CellProfiler project file, same as Simple_Segmentation.cppipe, but as an entire project file   |
 
+## Instructors note:
+All code here is provided as a template. It will have to be modified for use at your instutition while teaching. 
+For example, in the SBATCH parameters, partition names and email addresses should be modified. Other parameters may need to be modified to work with your system.
+As every HPC system is different, we rely on the expierence of the local instructors to customize the code for their learners. 
+
 ## Conda environment
 
 You will need to create a conda environment called `cp_428` on your cluster. 
-We Follow your institution's instructions for setting this up.
+The file *install_cellprofiler.sh* is provided to help you install CellProfiler as a conda environment, but the instructor will need to modify this script to work on the local HPC system.
+Follow your institution's or insturctors instructions for setting this up.
 
-This environment should contain `scikit-image` e.g.
+To install: download the *install_cellprofiler.sh* script into a folder into which you have read/write access.
+Make sure that you have conda installed on your system. 
+*Note* the script uses 'ml Anaconda3' to load conda. Your HPC system may use something different.
 
 ```
 conda create -n scikit-image-env python=3.12
