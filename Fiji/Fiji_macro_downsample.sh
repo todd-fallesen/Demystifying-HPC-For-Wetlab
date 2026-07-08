@@ -16,6 +16,14 @@ MACRO_PATH="/camp/home/fallest/Desktop/working/fallest/Projects/HPC_Paper/Demyst
 INPUT_IMAGE="/camp/home/fallest/Desktop/working/fallest/Projects/HPC_Paper/IDR0051_HyperStack.tif"
 OUTPUT_DIR="/camp/home/fallest/Desktop/working/fallest/Projects/HPC_Paper/Test_outputs/Fiji_outputs/Downsample/"
 
+
+# Create output directory if it does not exist
+if [ ! -d "$OUTPUT_DIR" ]; then
+    echo "Creating output directory: $OUTPUT_DIR"
+    mkdir -p "$OUTPUT_DIR"
+fi
+
+
 "$FIJI_DIR/ImageJ-linux64" \
     --headless \
     --console \

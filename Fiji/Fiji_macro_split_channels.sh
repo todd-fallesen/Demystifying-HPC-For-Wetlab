@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script is to run the fiji macro "binary_nuclei_macro.ijm" 
+# This script is to run the fiji macro "split_channels_keep_1_slice.ijm" 
 # This can be used as a template for to submit a job to run any macro
 #SBATCH --job-name=macro-binary
 #SBATCH --ntasks=1
@@ -11,9 +11,9 @@
 
 
 FIJI_DIR="/nemo/stp/lm/working/marcots/Fiji.app"
-MACRO_PATH="/camp/home/fallest/Desktop/working/fallest/Projects/HPC_Paper/Demystifying-HPC-For-Wetlab/Fiji/binary_nuclei_macro.ijm"
-INPUT_DIR="/camp/home/fallest/Desktop/working/fallest/Projects/HPC_Paper/Demystifying-HPC-For-Wetlab/S-BIAD7/ExperimentA/"
-OUTPUT_DIR="/camp/home/fallest/Desktop/working/fallest/Projects/HPC_Paper/Test_outputs/Fiji_outputs/"
+MACRO_PATH="/camp/home/fallest/Desktop/working/fallest/Projects/HPC_Paper/Demystifying-HPC-For-Wetlab/Fiji/split_channels_keep_1_slice.ijm"
+INPUT_DIR="/camp/home/fallest/Desktop/working/fallest/Projects/HPC_Paper/Demo_Image_Set/S-BIAD7/ExperimentA/"
+OUTPUT_DIR="/camp/home/fallest/Desktop/working/fallest/Projects/HPC_Paper/Demo_Image_Set/S-BIAD7/Fiji_Output/"
 
 
 # Create output directory if it does not exist
