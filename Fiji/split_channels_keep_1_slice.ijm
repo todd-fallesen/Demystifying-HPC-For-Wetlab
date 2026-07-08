@@ -53,9 +53,11 @@ function processFile(input, output, file) {
 	
 	open(input + File.separator + file);
 	selectWindow(file);
+	title_head=getInfo("image.title");
 
 	run("Make Substack...", "slices=1"); //keep only the first slice
 	run("Split Channels");
+	close(title_head);
 	for (i=0;i<nImages;i++) {
 		print("there are: ", nImages, " channel images");
         selectImage(i+1);
