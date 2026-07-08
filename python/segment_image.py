@@ -37,6 +37,7 @@ def segment_image(input_path: Path, output_path: Path) -> None:
     # gaussian blur
     blurred_image = gaussian(image, sigma=3)
 
+
     # threshold, and remove any small objects
     threshold = threshold_li(blurred_image)
     thresholded_image = blurred_image > threshold
@@ -61,6 +62,7 @@ def segment_image(input_path: Path, output_path: Path) -> None:
 
     # save segmented image to new file
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    
     iio3.imwrite(output_path, nuclei)
 
 
