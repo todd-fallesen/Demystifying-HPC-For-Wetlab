@@ -4,7 +4,7 @@ Welcome to the GitHub Repository for “Demystifying HPC For Wet Lab Scientists.
 
         1.   Crick Advanced Light Microscopy, The Francis Crick Institute, London UK   
         2.   Advanced Research Computing (ARC) Centre, University College London, London UK  
-        3.  Department of Global Liberal Studies, New York University London  
+        3.   Department of Global Liberal Studies, New York University London  
         4.   ITO Research Computing Platforms The Francis Crick Institute, London UK  
 
 ## Introduction
