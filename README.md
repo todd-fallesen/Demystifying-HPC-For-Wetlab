@@ -27,3 +27,40 @@ The image 20210226_IDR.tif is an image of mouse lungs in 3 colors, taken from th
 
 
 ## Software Tracks
+Our three software tracks are: Python, CellProfiler, and Fiji.  These software packages are widely used in BioImage analysis and are readily available, with a strong support community behind them. The basis of the software tracks is not to teach how to do BioImage Analysis, but rather to show a simple procedure so that students can run their own pipelines built in these software packages
+
+In all software tracks, we encourage instructors to work with the students to navigate to the demonstration data and practice working with the demonstration data using the command line interface. To facilitate that we have written two simple scripts *move_dataset_files_hardcode.sh* and *move_datasets_files_parameter.sh* which demonstrate using a script to automate grouping of image files by filename structure into new folders. 
+
+#### Python Track
+In the Python track, the code is developed to perform nuclei segmentation of fluorescent images and generate segmentation masks. The demonstration images are in ExperiementA_Channel1.  
+
+In the python track, students will:  
+* Navigate file systems  
+* Learn conda environments  
+* Create a conda environment from scratch  
+* Edit a shell script  
+* Run a shell script to run python  <br>
+
+The full description of how the code works is found at [main/python].
+
+#### CellProfiler Track
+The CellProfiler pipeline is similar to the Python track pipeline.  The CellProfiler pipeline will segment the nuclei, measure and save in a csv file their area and intensity, and create an output image showing the segmentation objects. The demonstration images are in ExperiementA_Channel1.
+
+In the CellProfiler track, students will:  
+* Navigate the file system  
+* Learn conda environments  
+* Create a conda environment from a file  
+* Edit a shell script  
+* Run a shell script to run CellProfiler  <br>
+
+The full description of how the code works is found at [main/python].
+
+#### Fiji Track
+
+In the Fiji Track, there are two types of demonstration.  In the first, students will segment nuclei in the same manner as in the Python and CellProfiler tracks.  (This is *Fiji_macro_binary.sh* and the associated file **binary_nuclei_macro.ijm*.  The second demonstration is reducing the dimensions of a file, so that it can be easily viewed on a personal computer. A common issue wet-lab scientists have is wanting to visualize their microscopy data, but it is too large to open on a personal computer. *Fiji_macro_downsample.sh* and *reduce_dimensions_macro.ijm* work to take a large image and reduce it’s size to something manageable for visualization on a personal computer.
+
+In the Fiji track, students will:  
+* Navigate the file system  
+* Install Fiji on a linux system  
+* Edit a shell script  
+* Run a shell script to run Fiji  
