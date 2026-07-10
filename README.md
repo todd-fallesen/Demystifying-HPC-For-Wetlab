@@ -41,7 +41,7 @@ In the python track, students will:
 * Edit a shell script  
 * Run a shell script to run python  <br>
 
-The full description of how the code works is found at [main/python].
+The full description of how the code works is found at [main/python](https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab/tree/main/python).
 
 ### CellProfiler Track
 The CellProfiler pipeline is similar to the Python track pipeline.  The CellProfiler pipeline will segment the nuclei, measure and save in a csv file their area and intensity, and create an output image showing the segmentation objects. 
@@ -54,7 +54,7 @@ In the CellProfiler track, students will:
 * Edit a shell script  
 * Run a shell script to run CellProfiler  <br>
 
-The full description of how the code works is found at [main/python].
+The full description of how the code works is found at [main/CellProfiler](https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab/tree/main/cellprofiler).
 
 ### Fiji Track
 
@@ -66,4 +66,4 @@ In the Fiji track, students will:
 * Edit a shell script  
 * Run a shell script to run Fiji  
 
-  The full description of how the code works is found at [main/python].
+  The full description of how the code works is found at [main/Fiji](https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab/tree/main/Fiji).
