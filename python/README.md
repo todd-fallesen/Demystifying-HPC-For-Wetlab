@@ -40,4 +40,4 @@ sbatch job_submission_script.sh
 
 This will submit one job per input image, allowing them to be processed in parallel.
 
-Segmented images will be written to `BASE_DIR` with an `_output` suffix. Slurm logs are inside `BASE_DIR`, in a sub-directory called `logs`. 
+Segmented images will be written to `BASE_DIR/output` with an `_output` suffix. Slurm logs are inside `BASE_DIR`, in a sub-directory called `logs`. 
