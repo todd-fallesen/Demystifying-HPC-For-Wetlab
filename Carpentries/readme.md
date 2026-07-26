@@ -45,6 +45,10 @@ In this section, learners move on to using your institution's HPC system. This i
 
 - [Episode 1: 'Why use a Cluster?'](https://carpentries-incubator.github.io/hpc-intro/10-hpc-intro.html)
 
+This is a good point to introduce the software track you will be using for the rest of the course. Emphasising the advantages of running that specific workflow on HPC rather than locally e.g. the ability to process many samples in parallel, or work with very large images.
+
+It can also be useful to briefly introduce the structure of an HPC cluster at this stage. For this, the 'Nodes' and 'What's in a Node?' sections of [Episode 3: 'Working on a remote HPC system'](https://carpentries-incubator.github.io/hpc-intro/12-cluster.html) are useful.
+
 ## Connecting to a remote HPC system
 
 - [Episode 2: 'Connecting to a remote HPC system'](https://carpentries-incubator.github.io/hpc-intro/11-connecting.html)
@@ -53,17 +57,27 @@ In this section, learners move on to using your institution's HPC system. This i
 
 - [Episode 3: 'Working on a remote HPC system'](https://carpentries-incubator.github.io/hpc-intro/12-cluster.html)
 
+This is a good point to explore the example data for the selected software track on the HPC, using commands like `pwd` / `cd` / `ls` etc.
+
+We also encourage, whichever software track you choose, to introduce running shell scripts on the HPC via [`move_dataset_files_hardcode.sh`](../cellprofiler/move_dataset_files_hardcode.sh) and [`move_dataset_files_parameter.sh`](../cellprofiler/move_dataset_files_parameter.sh) found in the cellprofiler section. These scripts organise the `ExperimentA_Split_Channels` example data into multiple directories based on their filenames - first via hardcoded input / output paths, and then via command-line arguments.  
+
 ## Transferring files with remote computers
 
 - [Episode 7: 'Transferring files with remote computers'](https://carpentries-incubator.github.io/hpc-intro/16-transferring-files.html)
+
+Here, learners can practice transferring a small number of the provided example image files off the cluster to their local machine and vice versa.
 
 ## Scheduler fundamentals
 
 - [Episode 4: 'Scheduler fundamentals'](https://carpentries-incubator.github.io/hpc-intro/13-scheduler.html)
 
+Here, instructors would walk students through submitting the scripts for their chosen software track - Fiji, Python or CellProfiler. For example, submitting the job with `sbatch`, monitoring it in the queue, and changing requested resources by modifying any `#SBATCH` lines.
+
 ## Accessing software via modules
 
 - [Episode 6: 'Accessing software via Modules'](https://carpentries-incubator.github.io/hpc-intro/15-modules.html)
+
+Here, instructors can also highlight examples of module use in their chosen software track (where possible). For example, both the CellProfiler and Python scripts load a module for Anaconda.
 
 # Part 3 - Being a good HPCitizen
 
