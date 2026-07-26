@@ -2,7 +2,7 @@
 
 This is an example of teaching basic shell scripts, using the [Carpentries Unix Shell example data](https://swcarpentry.github.io/shell-novice/index.html#download-files).
 
-## What are shells scripts?
+## What are shell scripts?
 
 So far we have been typing commands into the shell one-by-one, and examining their output. This works, but if we want to repeat these steps on another dataset, or after closing and re-opening the shell, we have to type them all over again.
 

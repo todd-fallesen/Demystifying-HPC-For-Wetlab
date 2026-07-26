@@ -10,6 +10,8 @@ Welcome to the GitHub Repository for “Demystifying HPC For Wet Lab Scientists.
 ## Introduction
 The code here is meant to augment the teaching curriculum presented in our paper.  We have three separate software tracks, each of which demonstrates fundamental HPC skills in a manner that is applicable to wet-lab scientists learning command line computing and HPC for the first time.
 
+We list all links to recommended course material, as well as suggestions of where to integrate these tracks throughout the course in the [course links overview](./Carpentries/readme.md).
+
 ## Demonstration Images
 The demonstration dataset for this code is located here: https://crick.figshare.com/account/articles/32860817
 The data are organised in this manner:  
