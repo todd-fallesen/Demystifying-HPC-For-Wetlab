@@ -10,6 +10,8 @@ Welcome to the GitHub Repository for “Demystifying HPC For Wet Lab Scientists.
 ## Introduction
 The code here is meant to augment the teaching curriculum presented in our paper.  We have three separate software tracks, each of which demonstrates fundamental HPC skills in a manner that is applicable to wet-lab scientists learning command line computing and HPC for the first time.
 
+We list all links to recommended course material, as well as suggestions of where to integrate these tracks throughout the course in the [course links overview](./Carpentries/readme.md).
+
 ## Demonstration Images
 The demonstration dataset for this code is located here: https://crick.figshare.com/account/articles/32860817
 The data are organised in this manner:  
@@ -21,9 +23,9 @@ The data are organised in this manner:
 ---20210226  
  ------20210226_IDR.tif  
 
-The dataset in S-BIAD7 is truncated from a much larger dataset in the BioImage Archive. The data is accessible at https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD7 The data was truncated for use in demonstration. There are 9 primary data files, in the folder "ExperimentA". These images all have 3 z-slices and 4 channels. In the folder "ExperiementA_Split_Channels" the primary data files are split by channel for ease in processing by CellProfiler. In the folder ExperimentA_Channel1 the images are only the first channel, and the first slice from each original image in ExperimentA.
+The dataset in S-BIAD7 is truncated from a much larger dataset in the BioImage Archive. The data is accessible at https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD7 and is released under a CC0 license. The data was truncated for use in demonstration. There are 9 primary data files, in the folder "ExperimentA". These images all have 3-4 z-slices and 4 channels. In the folder "ExperimentA_Split_Channels" the primary data files are split by channel for ease in processing by CellProfiler. In the folder ExperimentA_Channel1 the images are only the first channel, and the first slice from each original image in ExperimentA.
 
-The image 20210226_IDR.tif is an image of mouse lungs in 3 colors, taken from the Image Data Resource:  Study: idr0106-kubota-lunglightsheet, ID: 12689244.  The image was resized from it’s original 4992x4255 pixel size to 900x767 for ease of data transfer. 
+The image 20210226_IDR.tif is an image of mouse lungs in 3 colors, taken from the Image Data Resource:  [Study: idr0106-kubota-lunglightsheet](https://idr.openmicroscopy.org/study/idr0106/), ID: 12689244 - this data is released under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.  The image was resized from it’s original 4992x4255 pixel size to 900x767 for ease of data transfer. 
 
 
 ## Software Tracks
@@ -32,7 +34,7 @@ Our three software tracks are: Python, CellProfiler, and Fiji.  These software p
 In all software tracks, we encourage instructors to work with the students to navigate to the demonstration data and practice working with the demonstration data using the command line interface. To facilitate that we have written two simple scripts *move_dataset_files_hardcode.sh* and *move_datasets_files_parameter.sh* which demonstrate using a script to automate grouping of image files by filename structure into new folders. 
 
 ### Python Track
-In the Python track, the code is developed to perform nuclei segmentation of fluorescent images and generate segmentation masks. The demonstration images are in ExperiementA_Channel1.  The code will create a new job for each image, so that all images are segmented in parallel.
+In the Python track, the code is developed to perform nuclei segmentation of fluorescent images and generate segmentation masks. The demonstration images are in ExperimentA_Channel1.  The code will create a new job for each image, so that all images are segmented in parallel.
 
 In the python track, students will:  
 * Navigate file systems  
@@ -45,7 +47,7 @@ The full description of how the code works is found at [main/python](https://git
 
 ### CellProfiler Track
 The CellProfiler pipeline is similar to the Python track pipeline.  The CellProfiler pipeline will segment the nuclei, measure and save in a csv file their area and intensity, and create an output image showing the segmentation objects. 
-The demonstration images are in ExperiementA_Split_Channels.  The data should be further processed using  *move_dataset_files_hardcode.sh* or *move_datasets_files_parameter.sh* to group the files. If this is done, the CellProfiler submission script will create a new job for each image set, so that they are processed in parallel. 
+The demonstration images are in ExperimentA_Split_Channels.  The data should be further processed using  *move_dataset_files_hardcode.sh* or *move_datasets_files_parameter.sh* to group the files. If this is done, the CellProfiler submission script will create a new job for each image set, so that they are processed in parallel. 
 
 In the CellProfiler track, students will:  
 * Navigate the file system  
