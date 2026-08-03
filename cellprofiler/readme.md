@@ -19,7 +19,7 @@ In this example, we will use a shell script to submit a Cellprofiler job to segm
 The course is structured in such a way that the teaching examples can be taught using CellProfiler, Fiji Or Python. All of the tracks use shell scripting.
 In this track, the use of Fiji is also optional, but can be useful.  The Demo dataset in `ExperimentA` is in multi-channel z-stacks. 
 There is a Fiji script provided `split_channels_keep_1_slice.ijm` which can be used to split the data in `ExperimentA` into single channel, single slice images.
-To use the Fiji script, you must run `split_channels_fiji.sh`. 
+To use the Fiji script, you must run `Fiji_macro_split_channels_fiji.sh`. 
 The results of `split_channels_keep_1_slice.ijm` are the same as in the Test Data `Demo_Image_Set\S-BIAD7\ExperimentA_Split_Channels`
 
 We then suggested you use `move_dataset_files_hardcode.sh` or `move_dataset_files_parameter.sh` to demonstrate moving files using shell scripting.
