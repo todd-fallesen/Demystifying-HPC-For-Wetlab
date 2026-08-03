@@ -25,7 +25,7 @@ The data are organised in this manner:
 
 The dataset in S-BIAD7 is truncated from a much larger dataset in the BioImage Archive. The data is accessible at https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD7 and is released under a CC0 license. The data was truncated for use in demonstration. There are 9 primary data files, in the folder "ExperimentA". These images all have 3-4 z-slices and 4 channels. In the folder "ExperimentA_Split_Channels" the primary data files are split by channel for ease in processing by CellProfiler. In the folder ExperimentA_Channel1 the images are only the first channel, and the first slice from each original image in ExperimentA.
 
-The image 20210226_IDR.tif is an image of mouse lungs in 3 colors, taken from the Image Data Resource:  [Study: idr0106-kubota-lunglightsheet](https://idr.openmicroscopy.org/study/idr0106/), ID: 12689244 - this data is released under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.  The image was resized from it’s original 4992x4255 pixel size to 900x767 for ease of data transfer. 
+The image 20210226_IDR.tif is a 4D pre-registered lightsheet acquisition of a developing zebrafish tailbud, containing one channel, 451 Z-slices and 132 timepoints, taken from the Image Data Resource: [Study: idr0051-fulton-tailbudlightsheet/experimentA](https://idr.openmicroscopy.org/study/idr0051/). This data is released under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license. The image was resized from its original 4992x4255 pixel size to 900x767 for ease of data transfer. 
 
 
 ## Software Tracks

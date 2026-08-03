@@ -23,7 +23,7 @@ conda activate cp428
 echo $1
 outdir=$(basename $1)
 PIPELINE_FILE="/domain/user/Demystifying-HPC-For-Wetlab/cellprofiler/Simple_Segmentation.cppipe"
-OUTPUT_FOLDER="/domain/user/Demystifying-HPC-For-Wetlab/cellprofiler/CP_Output/"
+OUTPUT_FOLDER="/domain/user/Demystifying-HPC-For-Wetlab/cellprofiler/CP_Output/multi_set_output/"
 outdir=$(basename "$1")
 cellprofiler -c -r -p "$PIPELINE_FILE" -i "${1}/" -o "${OUTPUT_FOLDER}${outdir}_output"  #This is the command that runs cellprofiler.  It takes the input folder (the dataset) and outputs to a new folder in the CP_Output directory.  The output folder is named after the input folder, with "_output" appended to it.
 
