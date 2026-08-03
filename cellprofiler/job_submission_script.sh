@@ -11,8 +11,8 @@
 
 # This is the script to submit cellprofiler jobs to the cluster.  To change the cellprofiler pipeline, change it in "CP4_task_script.sh"
 
-BASE_DIR="/nemo/stp/lm/working/fallest/Projects/HPC_Paper/CellProfiler/Image_Set/S-BIAD7/ExperimentA_Split_Channels_Sorted"
-TASK_SCRIPT="/nemo/stp/lm/working/fallest/Projects/HPC_Paper/Demystifying-HPC-For-Wetlab/cellprofiler/CP4_task_script.sh"
+BASE_DIR="/domain/user/Demonstration_Image_Set/S-BIAD7/ExperimentA_Split_Channels_Sorted"
+TASK_SCRIPT="/domain/user/Demystifying-HPC-For-Wetlab/cellprofiler/CP4_task_script.sh"
 
 cd "$BASE_DIR" || exit 1
 

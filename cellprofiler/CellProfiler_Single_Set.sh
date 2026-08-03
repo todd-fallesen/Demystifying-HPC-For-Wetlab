@@ -7,10 +7,10 @@
 #SBATCH --partition=ncpu
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --mail-user=todd.fallesen@crick.ac.uk
+#SBATCH --mail-user=user@generic.ac.uk
 #SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --output=/camp/home/fallest/working/fallest/CPOut/slurm-test.out
-#SBATCH --error=/camp/home/fallest/working/fallest/CPOut/slurm-test.err
+#SBATCH --output=/domain/user/path/to/Output/CPOut/slurm-test.out
+#SBATCH --error=/domain/user/path/to/Output/CPOut/slurm-test.err
 
 
 
@@ -22,8 +22,8 @@ conda activate cp428
 
 echo $1
 #$1 is the input folder
-PIPELINE_FILE="/nemo/stp/lm/working/fallest/Projects/HPC_Paper/Demystifying-HPC-For-Wetlab/cellprofiler/Simple_Segmentation.cppipe"
-OUTPUT_FOLDER="/nemo/stp/lm/working/fallest/Projects/HPC_Paper/CellProfiler/CP_Output/"
+PIPELINE_FILE="/domain/user/Demystifying-HPC-For-Wetlab/cellprofiler/Simple_Segmentation.cppipe"
+OUTPUT_FOLDER="/domain/user/Demystifying-HPC-For-Wetlab/cellprofiler/CP_Output/"
 outdir=$(basename "$1")
 cellprofiler -c -r -p "$PIPELINE_FILE" -i "${1}/" -o "${OUTPUT_FOLDER}${outdir}_output"
 
