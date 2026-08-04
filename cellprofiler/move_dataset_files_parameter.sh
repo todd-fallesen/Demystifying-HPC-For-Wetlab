@@ -21,6 +21,11 @@ fi
 
 mkdir -p "$DEST_DIR"                                            #This line creates the destination directory if it doesn't already exist.  The -p flag ensures that no error is thrown if the directory already exists, and it will also create any necessary parent directories.
 
+
+# --------------------------------------------------
+# 3. Loop over all TIFF files in the source directory
+# --------------------------------------------------
+
 for f in "$SRC_DIR"/*.tiff; do                                       #This is a for loop that iterates over all files in the source directory that have a .tiff extension.  The variable $f will hold the full path to each file as the loop iterates.
 
     # Get just the filename (remove the path)
@@ -50,5 +55,4 @@ for f in "$SRC_DIR"/*.tiff; do                                       #This is a 
 
     fi
 done
-
 #to run bash move_dataset_files_parameter.sh path/to/images path/to/output
