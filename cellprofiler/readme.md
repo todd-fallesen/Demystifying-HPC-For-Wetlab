@@ -7,6 +7,8 @@ In this example, we will use a shell script to submit a Cellprofiler job to segm
 | ------------- | ------------- |
 | move_dataset_files_hardcode.sh | Shell Script to move the split channels data into seperate folders based on *Rep* and *Div* using Regular expressions. Directories must be specified in script|
 | move_dataset_files_parameter.sh  | same as *move_dataset_files_hardcode.sh* but can be called with parameters, *move_dataset_files_parameter.sh /path/to/source /path/to/destination*  |
+| split_channels_keep_1_slice.ijm  | Example Fiji script which will take files from ExperimentA, keep only the first slice, and ssave the images as seperate channel images. Is used to generate `ExperimentA_Split_Channels_Sorted` |
+| Fiji_macro_split_channels.sh  |  The shell script to run  `split_channels_keep_1_slice.ijm` on an HPC cluster.|
 | cp_428.yml  | Environment file for CellProfiler  |
 | install_cellprofiler.sh  | Shell Script to download and install CellProfiler environment  |
 | CellProfiler_Single_Set.sh | Shell Script to demonstrate how to submit a single CellProfiler job on one image set  |
