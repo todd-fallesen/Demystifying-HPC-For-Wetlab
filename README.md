@@ -13,7 +13,7 @@ The code here is meant to augment the teaching curriculum presented in our paper
 We list all links to recommended course material, as well as suggestions of where to integrate these tracks throughout the course in the [course links overview](./Carpentries/readme.md).
 
 ## Demonstration Images
-The demonstration dataset for this code is located here: https://crick.figshare.com/account/articles/32860817
+The demonstration dataset for this code is located here: [https://crick.figshare.com/account/articles/32860817](https://doi.org/10.25418/crick.32860817.v2)
 The data are organised in this manner:  
 -Demo_Image_set  
 ---S-BIAD7  
