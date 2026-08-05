@@ -28,7 +28,19 @@ Access might be dependent on local infrastructure, but is likely going to requir
 
 It is possible to install and run image analysis software via these remote web access clients, offering a similar user experience to interacting with local machines thanks to the web interface. 
 
-We are using as an example a 4D dataset from the Image Data Resource ([idr0051](https://idr.openmicroscopy.org/webclient/?show=project-552), `/​​idr0051-fulton-tailbudlightsheet/20181025-ftp/Dataset_1/Processed Image Files`) to demonstrate a common pipeline which a user might want to implement to open and browse a large dataset. The image dataset is a pre-registered lightsheet acquisition of a developing zebrafish tailbud, containing one channel, 451 Z-slices and 132 timepoints. We provide an example dataset at `Demo_Image_Set\20210226\`. Opening this dataset in Fiji on a local machine is likely to result in an out-of-memory error, as it has a size of about 800 MB. 
+We are using as an example a 3D dataset of mouse lungs in 3 colors from the Image Data Resource (idr0106-kubota-lunglightsheet, ID: 12689244). 
+To demonstrate a common pipeline which a user might want to implement to open and browse a large dataset. The image dataset is a pre-registered lightsheet acquisition of adult mouse whole lungs, containing three channels. We provide the downsampled example dataset at `Demo_Image_Set\20210226\`. Opening the full resolution dataset in Fiji on a local machine is likely to result in an out-of-memory error, as it has a size of about 45 GB. To help with storage space and reduce download time during a course we resized the image from ~45GB to ~1.5GB for use in this project. The demonstration code would work equally well on a larger dataset, but this smaller dataset is easier to download and quicker to process during a course. 
+
+Original image size :
+4992 x 4255 pixels,
+Size = 47.6GB,
+Voxel Size = 1x1x1 um^3
+
+Resized image:
+900 x 767 pixles,
+Size = 1.5 GB,
+Voxel Size = 5.5467x5.5467x1 um^3
+
 
 The workflow to open the dataset via web remote access to HPC requires the following steps:
 * Request a session with suitable resources via the institutional portal. For this example, we requested a GPU single node session with 4 cores, 64 GB memory and 1 GPU with graphic acceleration.
