@@ -69,3 +69,5 @@ In the Fiji track, students will:
 * Run a shell script to run Fiji  
 
   The full description of how the code works is found at [main/Fiji](https://github.com/todd-fallesen/Demystifying-HPC-For-Wetlab/tree/main/Fiji).
+
+We note that the entire project is covered by the GNU GENERAL PUBLIC LICENSE version 3, as noted in the License file. 
