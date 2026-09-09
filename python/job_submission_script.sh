@@ -2,7 +2,7 @@
 #This job submission script iterates through the images in the BASE_DIR and runs the python script on them. 
 #The python script is set in "python_seg_task_script.sh"
 
-BASE_DIR="$HOME/HPC_Paper/Demo_Image_Set/S-BIAD7/Experiment_A_Channel1" #   Set the base directory where the images are located
+BASE_DIR="$HOME/HPC_Paper/Demo_Image_Set/S-BIAD7/ExperimentA_Channel1" #   Set the base directory where the images are located
 TASK_SCRIPT="$HOME/HPC_Paper/python/python_seg_task_script.sh"          #   Set the path to the task script that will be submitted to the job scheduler
 
 cd "$BASE_DIR" || exit 1                                                # Change to the base directory, exit with an error if it fails
